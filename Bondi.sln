@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewYorkerConverter", "NewYorkerConverter\NewYorkerConverter.csproj", "{AF0FAF88-D1D5-465E-9416-3BADAC2FA95C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RollingStoneConverter", "RollingStoneConverter\RollingStoneConverter.csproj", "{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF0FAF88-D1D5-465E-9416-3BADAC2FA95C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF0FAF88-D1D5-465E-9416-3BADAC2FA95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF0FAF88-D1D5-465E-9416-3BADAC2FA95C}.Debug|x86.ActiveCfg = Debug|x86
+		{AF0FAF88-D1D5-465E-9416-3BADAC2FA95C}.Debug|x86.Build.0 = Debug|x86
+		{AF0FAF88-D1D5-465E-9416-3BADAC2FA95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF0FAF88-D1D5-465E-9416-3BADAC2FA95C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF0FAF88-D1D5-465E-9416-3BADAC2FA95C}.Release|x86.ActiveCfg = Release|x86
+		{AF0FAF88-D1D5-465E-9416-3BADAC2FA95C}.Release|x86.Build.0 = Release|x86
+		{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}.Debug|x86.ActiveCfg = Debug|x86
+		{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}.Debug|x86.Build.0 = Debug|x86
+		{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}.Release|x86.ActiveCfg = Release|x86
+		{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE3701D4-5E64-4ED4-BCCD-B01E896A2D04}
+	EndGlobalSection
+EndGlobal
