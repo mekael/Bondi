@@ -20,5 +20,8 @@ namespace RollingStoneConverter
         
         [Option("password", Required = true)]
         public string Password { get; set; }
+
+        [Option("magazine", Required =true)]
+        public string Magazine { get; set; }
     }
 }

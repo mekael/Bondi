@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewYorkerConverter", "NewYorkerConverter\NewYorkerConverter.csproj", "{AF0FAF88-D1D5-465E-9416-3BADAC2FA95C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RollingStoneConverter", "RollingStoneConverter\RollingStoneConverter.csproj", "{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BondiDjvuConverter", "BondiDjvuConverter\BondiDjvuConverter.csproj", "{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

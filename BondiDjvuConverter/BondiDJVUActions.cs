@@ -83,6 +83,8 @@ namespace RollingStoneConverter
                 djvuPageBitmap.Bitmap.Save(outputFilePath, System.Drawing.Imaging.ImageFormat.Jpeg);
                 djvuPageBitmap.Close();
             }
+
+
             GC.Collect();
 
         }

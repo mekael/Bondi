@@ -21,8 +21,7 @@ namespace RollingStoneConverter
             string issueDate = fileName.Split('_')[1];
 
             string issueYear = issueDate.Substring(0, 4);
-            string issueMonth = issueDate.Substring(4, 2);
-            string issueOutputFolderPath = Path.Combine(outputFolderPath, issueYear, issueMonth, issueDate);
+            string issueOutputFolderPath = Path.Combine(outputFolderPath, issueYear, issueDate);
 
             if (!Directory.Exists(issueOutputFolderPath))
             {

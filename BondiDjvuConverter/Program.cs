@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using NLog;
 
 
-namespace RollingStoneConverter
+namespace BondiDjvuConverter
 {
     class Program
     {

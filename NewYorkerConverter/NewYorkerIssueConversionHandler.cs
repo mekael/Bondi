@@ -24,9 +24,8 @@ namespace NewYorkerConverter
 
             string fileName = Path.GetFileNameWithoutExtension(issueFilePath);
             string issueYear = fileName.Split('_')[0];
-            string issueMonth = fileName.Split('_')[1];
             string issueDate = fileName.Replace("_", "");
-            string issueOutputFolderPath = Path.Combine(outputFolderPath, issueYear, issueMonth, issueDate);
+            string issueOutputFolderPath = Path.Combine(outputFolderPath, issueYear,  issueDate);
 
             if (!Directory.Exists(issueOutputFolderPath))
             {
@@ -51,14 +50,27 @@ namespace NewYorkerConverter
                     var gamma = fMManagedLoader.GammaForPage(i);
                     logger.Info("Issue:{0} Page:{1} Height:{2} Width:{3} Gamma:{4}", issueDate, i + 1, height, width, gamma);
 
-                    Bitmap pageBitmap = new Bitmap((int)width, (int)height, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
-                    fMManagedLoader.RenderBitmap(pageBitmap, i, gamma);
 
-                    var pageFileName = string.Format("{0}.{1}", (i + 1), "jpeg");
-                    var pageOutputFilePath = Path.Combine(issueOutputFolderPath, pageFileName);
+                    Bitmap pageBitmap = new Bitmap((int)width, (int)height, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
+                    // TODO: Allow for the user to select if they actually want a thumbnail or not.  
+                    // TODO: Cats? 
+                    Bitmap thumbnailBitmap = new Bitmap((int)width/10, (int)height/10, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
+
+
+                    fMManagedLoader.RenderBitmap(pageBitmap, i, gamma);
+                    fMManagedLoader.RenderBitmap(thumbnailBitmap, i, gamma);
+
+                    var pageFileName = string.Format("{0}.jpeg", (i + 1));
+
+                    var pageOutputFilePath = Path.Combine(issueOutputFolderPath,"pages", pageFileName);
+                    var thumbnailOutputFilePath = Path.Combine(issueOutputFolderPath,"thumbnails", pageFileName);
+
 
                     logger.Info("Issue:{0} Page:{1} OutputFilePath:{2}", issueDate, i + 1, pageOutputFilePath);
+                    
                     pageBitmap.Save(pageOutputFilePath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    thumbnailBitmap.Save(thumbnailOutputFilePath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                     
 
                     GC.Collect();
                 }

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>RollingStoneConverter</RootNamespace>
-    <AssemblyName>RollingStoneConverter</AssemblyName>
+    <RootNamespace>BondiDjvuConverter</RootNamespace>
+    <AssemblyName>BondiDjvuConverter</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
