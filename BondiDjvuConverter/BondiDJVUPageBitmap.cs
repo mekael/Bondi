@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RollingStoneConverter
+namespace BondiDjvuConverter
 {
     public class BondiDJVUPageBitmap : IDisposable
     {

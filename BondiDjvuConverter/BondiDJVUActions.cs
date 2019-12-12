@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.InteropServices;
 
-namespace RollingStoneConverter
+namespace BondiDjvuConverter
 {
     public class BondiDJVUActions
     {
