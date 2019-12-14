@@ -13,7 +13,6 @@ namespace NewYorkerConverter
         public string InputFolderPath { get; set; }
         [Option("outputFolder", Required =true)]
         public string OutputFolderPath { get; set; }
-        [Option("resolutionScalingFactor", Required =false, Default =1.0f)]
-        public float ResolutionScalingFactor { get; set; }
+
     }
 }

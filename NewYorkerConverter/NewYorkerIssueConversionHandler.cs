@@ -14,7 +14,7 @@ namespace NewYorkerConverter
     {
         Logger logger = LogManager.GetCurrentClassLogger();
 
-        public void Handle(string issueFilePath, string outputFolderPath, float resolutionScalingFactor)
+        public void Handle(string issueFilePath, string outputFolderPath)
         {
 
             if (string.IsNullOrWhiteSpace(issueFilePath))
@@ -23,15 +23,26 @@ namespace NewYorkerConverter
             }
 
             string fileName = Path.GetFileNameWithoutExtension(issueFilePath);
+
             string issueYear = fileName.Split('_')[0];
             string issueDate = fileName.Replace("_", "");
-            string issueOutputFolderPath = Path.Combine(outputFolderPath, issueYear,  issueDate);
+            
+            string issueOutputFolderPath = Path.Combine(outputFolderPath,issueYear,issueDate,"Pages");
+            string thumbnailOutputFolderPath = Path.Combine(outputFolderPath,  issueYear, issueDate, "Thumbnails");
 
             if (!Directory.Exists(issueOutputFolderPath))
             {
-                logger.Info("Creating folder for issue {0} at {1}", issueDate, issueOutputFolderPath);
+                logger.Info("Creating folder for pages of issue {0} at {1}", issueDate, issueOutputFolderPath);
                 Directory.CreateDirectory(issueOutputFolderPath);
             }
+
+            if (!Directory.Exists(thumbnailOutputFolderPath))
+            {
+                logger.Info("Creating folder for thumbnails of issue {0} at {1}", issueDate, thumbnailOutputFolderPath);
+                Directory.CreateDirectory(thumbnailOutputFolderPath);
+            }
+
+
 
             FMManagedLoader fMManagedLoader = new FMManagedLoader(issueFilePath);
             uint pageCount = fMManagedLoader.PageCount();
@@ -45,25 +56,24 @@ namespace NewYorkerConverter
                     logger.Info("Starting to process page {0} of issue {1}", i+1, issueDate);
 
 
-                    var height = fMManagedLoader.HeightForPage(i) * resolutionScalingFactor;
-                    var width = fMManagedLoader.WidthForPage(i) * resolutionScalingFactor;
+                    var height = fMManagedLoader.HeightForPage(i);
+                    var width = fMManagedLoader.WidthForPage(i) ;
                     var gamma = fMManagedLoader.GammaForPage(i);
+
                     logger.Info("Issue:{0} Page:{1} Height:{2} Width:{3} Gamma:{4}", issueDate, i + 1, height, width, gamma);
 
 
                     Bitmap pageBitmap = new Bitmap((int)width, (int)height, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
-                    // TODO: Allow for the user to select if they actually want a thumbnail or not.  
-                    // TODO: Cats? 
-                    Bitmap thumbnailBitmap = new Bitmap((int)width/10, (int)height/10, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
-
-
                     fMManagedLoader.RenderBitmap(pageBitmap, i, gamma);
-                    fMManagedLoader.RenderBitmap(thumbnailBitmap, i, gamma);
+
+                    //Create thumbnail with is 10% of the size of the original. 
+                    Bitmap thumbnailBitmap =  new Bitmap(pageBitmap, (int)width / 10, (int)height / 10);
+ 
 
                     var pageFileName = string.Format("{0}.jpeg", (i + 1));
 
-                    var pageOutputFilePath = Path.Combine(issueOutputFolderPath,"pages", pageFileName);
-                    var thumbnailOutputFilePath = Path.Combine(issueOutputFolderPath,"thumbnails", pageFileName);
+                    var pageOutputFilePath = Path.Combine(issueOutputFolderPath, pageFileName);
+                    var thumbnailOutputFilePath = Path.Combine(thumbnailOutputFolderPath, pageFileName);
 
 
                     logger.Info("Issue:{0} Page:{1} OutputFilePath:{2}", issueDate, i + 1, pageOutputFilePath);

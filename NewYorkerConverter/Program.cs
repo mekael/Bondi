@@ -27,7 +27,7 @@ namespace NewYorkerConverter
             for (int i = 0; i < issues.Count(); i++)
             { 
                     NewYorkerIssueConversionHandler newYorkerIssueConversionHandler = new NewYorkerIssueConversionHandler();
-                    newYorkerIssueConversionHandler.Handle(issues[i], converterOptions.OutputFolderPath, converterOptions.ResolutionScalingFactor);
+                    newYorkerIssueConversionHandler.Handle(issues[i], converterOptions.OutputFolderPath);
                  
             }
 
