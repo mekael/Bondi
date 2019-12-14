@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewYorkerConverter", "NewYo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BondiDjvuConverter", "BondiDjvuConverter\BondiDjvuConverter.csproj", "{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldSkoul", "OldSkoul\OldSkoul.csproj", "{FDDA8EAB-09CE-4926-94A2-4E70B10CF2EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}.Release|x86.ActiveCfg = Release|x86
 		{F9DE2776-9F8D-4342-8B3C-82FD9F01AF82}.Release|x86.Build.0 = Release|x86
+		{FDDA8EAB-09CE-4926-94A2-4E70B10CF2EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDDA8EAB-09CE-4926-94A2-4E70B10CF2EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDDA8EAB-09CE-4926-94A2-4E70B10CF2EB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FDDA8EAB-09CE-4926-94A2-4E70B10CF2EB}.Debug|x86.Build.0 = Debug|Any CPU
+		{FDDA8EAB-09CE-4926-94A2-4E70B10CF2EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDDA8EAB-09CE-4926-94A2-4E70B10CF2EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDDA8EAB-09CE-4926-94A2-4E70B10CF2EB}.Release|x86.ActiveCfg = Release|Any CPU
+		{FDDA8EAB-09CE-4926-94A2-4E70B10CF2EB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
