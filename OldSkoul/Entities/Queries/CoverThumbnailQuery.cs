@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace OldSkoul.Entities.Queries
 {
-    public class IssueThumbnailQuery
+    public class CoverThumbnailQuery
     {
         public int MagazineId { get; set; }
         public int? IssueYear { get; set; }

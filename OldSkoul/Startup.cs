@@ -1,16 +1,14 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
-using OldSkoul.Data;
-using OldSkoul.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OldSkoul.Data;
+using OldSkoul.Models;
+ 
 
 namespace OldSkoul
 {
@@ -40,6 +38,21 @@ namespace OldSkoul
                 .AddIdentityServerJwt();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+
+            services.AddTransient<OldSkoul.Logic.CoverThumbnailQueryHandler>();
+            services.AddTransient<OldSkoul.Logic.IssuePagesThumbnailQueryHandler>();
+
+            
+
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo{  Title = "My API", Version = "v1" });
+            });
+
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -54,6 +67,17 @@ namespace OldSkoul
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+
+                app.UseSwagger();
+
+                // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+                // specifying the Swagger JSON endpoint.
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                });
+
+
             }
             else
             {

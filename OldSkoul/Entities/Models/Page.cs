@@ -11,6 +11,7 @@ namespace OldSkoul.Entities.Models
         public Issue Issue { get; set; }
         public string Folio { get; set; }
         public int Offset { get; set; }
+        public bool IsCoverPage { get; set; }
         public string PageFilePath { get; set; }
         public string ThumbnailFilePath { get; set; }
         public virtual ICollection<Article> Articles { get; set; }

@@ -1,0 +1,55 @@
+﻿<Page x:Class="OldSkoulDesktop.Pages.Issue"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OldSkoulDesktop.Pages"
+      mc:Ignorable="d" 
+    d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="Issue">
+
+    <Page.Resources>
+        <DataTemplate x:Key="PageThumbnailItemTemplate">
+            <Grid MouseDown="ClickIssuePageEventHandler" Tag="{Binding PageId}">
+                <WrapPanel>
+                    <Image Height="95"  Stretch="Fill" Source="{Binding ThumbnailImageSource }" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </WrapPanel>
+            </Grid>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="ArticleDescriptionItemTemplate">
+            <Grid>
+                <WrapPanel>
+                    <Label Content="{Binding Title}" />
+                </WrapPanel>
+            </Grid>
+        </DataTemplate>
+
+
+    </Page.Resources>
+
+    <Grid>
+        
+        <ListView Name="IssueContentsListView"   HorizontalAlignment="Left" Width="300"   Margin="0,0,0,0" VerticalAlignment="Bottom" ItemTemplate="{StaticResource ArticleDescriptionItemTemplate}" >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" ></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+        
+
+        <Image Name="PageImage" HorizontalAlignment="Left"  Margin="300,0,0,0" VerticalAlignment="Top"  />
+
+
+        <ListView Name="IssuePageListView"  HorizontalAlignment="Left" Height="150" Margin="0,0,0,0" VerticalAlignment="Bottom" ItemTemplate="{StaticResource PageThumbnailItemTemplate}" >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" ></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+    </Grid>
+
+
+</Page>

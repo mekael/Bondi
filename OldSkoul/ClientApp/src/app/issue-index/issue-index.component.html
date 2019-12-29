@@ -1,0 +1,24 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!thumbnails"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="thumbnails">
+  <thead>
+    <tr>
+      <th>IssueId</th>
+      <th>PublishedOnDate</th>
+      <th>Thumbnail</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let thumbnail of thumbnails">
+      <td>{{ thumbnail.IssueId  }}</td>
+      <td>{{ thumbnail.PublishedOnDate }}</td>
+       
+    </tr>
+  </tbody>
+</table>
+

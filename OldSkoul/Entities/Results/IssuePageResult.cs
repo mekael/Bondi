@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace OldSkoul.Entities.Results
 {
-    public class IssueThumbnailResult
+    public class IssuePageResult
     {
         public int IssueId { get; set; }
-        public DateTime PublishedDate { get; set; }
-        public byte[] Thumbnail { get; set; }
+        public int PageId { get; set; }
+        public byte[] PageThumbnail { get; set; }
     }
 }

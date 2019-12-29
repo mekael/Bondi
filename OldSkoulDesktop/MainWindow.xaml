@@ -1,0 +1,45 @@
+﻿<Controls:MetroWindow x:Class="OldSkoulDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OldSkoulDesktop"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        Title="Old Skoul" Height="1000" Width="1600">
+    <Grid>
+        <Frame Name="MainApplicationFrame" Content=""    Margin="25,0,0,25" NavigationUIVisibility="Hidden"/>
+        <Rectangle Fill="CornflowerBlue" HorizontalAlignment="Left" Height="969"
+                   Stroke="Black" VerticalAlignment="Top"
+                   Width="25" MouseDown="Rectangle_MouseDown" />
+       
+        <Controls:Flyout x:Name="NavigationFlyout"
+                         IsPinned="False"
+                         IsOpen="False"
+                 Controls:ControlsHelper.ContentCharacterCasing="Upper"
+                 Margin="0 0 0 0"
+                 Header="Old Skoul"
+                 Position="Left" >
+            <Grid>
+                <Label Name="ReadNavigate" HorizontalContentAlignment="Center" Content="Read!" Margin="0,10,0,860" MouseDown="Navigate"/>
+                <Label Name="SearchNavigate" HorizontalContentAlignment="Center" Content="Search" Margin="0,72,0,795" MouseDown="Navigate"/>
+                <Label Name="IndexNavigate" HorizontalContentAlignment="Center" Content="Index" Margin="0,39,0,827" MouseDown="Navigate"/>
+                <Label Name="SettingsNavigate" HorizontalContentAlignment="Center" Content="Settings" Margin="0,838,0,29"  MouseDown="Navigate" />
+            </Grid>
+
+        </Controls:Flyout>
+
+
+
+
+        <StatusBar Margin="0,393,0,0"  Height="25" VerticalAlignment="Bottom">
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock Name="VersionNumber">Fuck it</TextBlock>
+            </StatusBarItem>
+
+        </StatusBar>
+       
+
+    </Grid>
+</Controls:MetroWindow>
